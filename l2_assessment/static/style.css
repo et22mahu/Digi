@@ -1,18 +1,17 @@
 body {
     margin: 0;
-    background-color: #0f172a;
-    font-family: Arial, sans-serif;
+    background-color: #f6f1e8;
+    font-family: "cinzel decorative", "lora";
 }
 
 .main-title {
     text-align: center;
     font-size: 60px;
-    color: #38bdf8;
+    color: #a2674b;
     margin-top: 100px;
     letter-spacing: 3px;
-    text-transform: uppercase;
 }
 
 .main-title {
-    text-shadow: 0 0 10px #38bdf8, 0 0 20px #38bdf8
+    text-shadow: 0 0 10px #c9a55c, 0 0 20px #c9a55c
 }
