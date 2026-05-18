@@ -1,7 +1,7 @@
 body {
     margin: 0;
     background-color: #f6f1e8;
-    font-family: "cinzel decorative", "lora";
+    font-family: "Cinzel Decorative", "lora";
 }
 
 .main-title {
@@ -10,8 +10,18 @@ body {
     color: #a2674b;
     margin-top: 100px;
     letter-spacing: 3px;
+    text-shadow: 0 0 10px #c9a55c, 0 0 20px #c9a55c;
 }
 
-.main-title {
-    text-shadow: 0 0 10px #c9a55c, 0 0 20px #c9a55c
+.creature-of-the-week {
+    font-family: "Cinzel Decorative", "lora";
+    font-size: 2.3rem;
+    color: #c9a55c;
+    line-height: 1.2;
+    letter-spacing: 1px;
+}
+
+.creature-of-the-week span {
+    color: #c9a55c;
+    text-shadow: 0 0 10px #c9a55c, 0 0 20px #c9a55c;
 }
