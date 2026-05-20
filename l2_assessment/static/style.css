@@ -19,6 +19,8 @@ body {
     color: #c9a55c;
     line-height: 1.2;
     letter-spacing: 1px;
+    width: 50%;
+    margin-left: 40px;
 }
 
 .creature-of-the-week span {
