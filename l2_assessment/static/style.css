@@ -27,3 +27,12 @@ body {
     color: #c9a55c;
     text-shadow: 0 0 10px #c9a55c, 0 0 20px #c9a55c;
 }
+
+.creature-of-the-week-info {
+    width: 50%;
+    margin-left: 40px;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #2B2B2B;
+    font: "lora";
+}
