@@ -12,13 +12,9 @@ def search():
     query = request.args.get("query")
 
     conn = sqlite3.connect("myth_database.db")
-    cursor = conn.cursor
+    cursor = conn.cursor()
 
-    cursor.execute("""
-        SELECT *
-        FROM creatures
-        WHERE [Mythical Creature Name] LIKE?
-    """, (f"%{query}%",))
+    cursor.execute("SELECT * FROM [Greek Mythical Creatures]")
 
     results = cursor.fetchall()
 
