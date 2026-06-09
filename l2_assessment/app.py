@@ -1,7 +1,11 @@
 from flask import Flask, render_template, request
+import os
 import sqlite3
 
 app = Flask(__name__)
+
+BASE_DIR = os.path.abspath(os.path.dirname(__file__))
+DB_PATH = os.path.join(BASE_DIR, "myth_database.db")
 
 @app.route("/")
 def home():
@@ -9,15 +13,17 @@ def home():
 
 @app.route("/search")
 def search():
-    query = request.args.get("query")
+    query = request.args.get("query", "")
 
-    conn = sqlite3.connect("myth_database.db")
+    conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
 
-    cursor.execute("SELECT * FROM [Greek Mythical Creatures]")
+    cursor.execute(
+        'SELECT * FROM "Greek Mythical Creatures" WHERE Name LIKE ?',
+        (f"%{query}%",),
+    )
 
     results = cursor.fetchall()
-
     conn.close()
 
     return render_template(
