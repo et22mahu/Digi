@@ -19,7 +19,7 @@ def search():
     cursor = conn.cursor()
 
     cursor.execute(
-        'SELECT * FROM "Greek Mythical Creatures" WHERE Mythical Creature Name LIKE ?',
+        "SELECT * FROM `Greek Mythical Creatures` WHERE Mythical Creature Name LIKE ?",
         (f"%{query}%",),
     )
 
