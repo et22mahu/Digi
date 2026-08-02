@@ -40,19 +40,30 @@
     <!-- Main Heading -->
     <h1 class="main-title">The Mythology Bodleian</h1>
 
-    <!-- Creature of the Week -->
-    <h2 class="creature-of-the-week">
-        Mythical Creature of the Week:
-        <span>Drakons</span>
-    </h2>
+<div class="creature-container">
 
-    <p class="creature-of-the-week-info">
-        Drakons are creatures from Greek Mythology with enormous serpentine bodies,
-        often with crests, beards or multiple heads. They lacked wings and typically
-        moved by slithering. They primarily live in deep caverns, sacred groves and
-        remote springs. They are often sleepless and possess a gaze that can
-        paralyze victims.
-    </p>
+    <div class="creature-text">
+
+        <h2 class="creature-of-the-week">
+            Mythical Creature of the Week:
+            <span>Drakons</span>
+        </h2>
+
+        <p class="creature-of-the-week-info">
+            Drakons are creatures from Greek Mythology with enormous serpentine
+            bodies, often with crests, beards or multiple heads. They lacked
+            wings and typically moved by slithering. They primarily live in deep
+            caverns, sacred groves and remote springs. They are often sleepless
+            and possess a gaze that can paralyze victims.
+        </p>
+
+    </div>
+
+    <div class="creature-image">
+        <img src="{{ url_for('static', filename='images/drakon.png') }}" alt="Drakon">
+    </div>
+
+</div>
 
     <img
         src="{{ url_for('static', filename='images/logo.png') }}"
