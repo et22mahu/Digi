@@ -15,6 +15,10 @@ def home():
 def search():
     query = request.args.get("query", "")
 
+@app.route("/contact")
+def contact():
+    return render_template("contact.html")
+
     conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
 
@@ -36,7 +40,7 @@ def search():
 if __name__ == "__main__":
     app.run(debug=True)
 
-    
+
 
 @app.route("/greek")
 def greek():
