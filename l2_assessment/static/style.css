@@ -112,3 +112,50 @@ body {
 .search-button:hover {
     background-color: #8b5e3c;
 }
+
+.mythology-section {
+    margin: 80px 40px;
+}
+
+.mythology-heading {
+    text-align: center;
+    font-size: 2.2rem;
+    color: #a2674b;
+    margin-bottom: 40px;
+}
+
+.mythology-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.mythology-card {
+    width: 300px;
+    text-decoration: none;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: white;
+}
+
+.mythology-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.mythology-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.mythology-title {
+    padding: 18px;
+    text-align: center;
+    font-family: "Cinzel Decorative", serif;
+    font-size: 1.3rem;
+    color: #a2674b;
+}

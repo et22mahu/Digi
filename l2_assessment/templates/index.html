@@ -58,5 +58,30 @@
         alt="Drakon"
     >
 
+<section class="mythology-section">
+
+    <h2 class="mythology-heading">Browse by Mythology</h2>
+
+    <div class="mythology-grid">
+
+        <a href="/greek" class="mythology-card">
+            <img src="{{ url_for('static', filename='images/greek.jpg') }}" alt="Ancient Greek Mythology">
+            <div class="mythology-title">Ancient Greek</div>
+        </a>
+
+        <a href="/norse" class="mythology-card">
+            <img src="{{ url_for('static', filename='images/norse.jpg') }}" alt="Norse Mythology">
+            <div class="mythology-title">Norse</div>
+        </a>
+
+        <a href="/egyptian" class="mythology-card">
+            <img src="{{ url_for('static', filename='images/egyptian.jpg') }}" alt="Ancient Egyptian Mythology">
+            <div class="mythology-title">Ancient Egyptian</div>
+        </a>
+
+    </div>
+
+</section>
+
 </body>
 </html>

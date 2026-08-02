@@ -35,3 +35,17 @@ def search():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
+    
+
+@app.route("/greek")
+def greek():
+    return render_template("greek.html")
+
+@app.route("/norse")
+def norse():
+    return render_template("norse.html")
+
+@app.route("/egyptian")
+def egyptian():
+    return render_template("egyptian.html")
