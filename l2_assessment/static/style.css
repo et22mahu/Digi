@@ -74,3 +74,41 @@ body {
 .navbar-links a:hover {
     color: #c9a55c;
 }
+
+.search-form {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.search-input {
+    padding: 8px 14px;
+    border: 2px solid #c9a55c;
+    border-radius: 20px;
+    background: #f6f1e8;
+    font-family: "Lora", serif;
+    font-size: 0.95rem;
+    width: 220px;
+    outline: none;
+}
+
+.search-input:focus {
+    border-color: #8b5e3c;
+    box-shadow: 0 0 8px rgba(201,165,92,0.5);
+}
+
+.search-button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 20px;
+    background-color: #c9a55c;
+    color: white;
+    font-family: "Lora", serif;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.search-button:hover {
+    background-color: #8b5e3c;
+}
