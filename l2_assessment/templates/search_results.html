@@ -2,55 +2,64 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link href="https://googleapis.com" rel="stylesheet">
-    <link href="https://googleapis.com" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&display=swap" rel="stylesheet">
+
     <title>Search Results</title>
+
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
+
 <body>
+
     <h1 class="main-title">Search Results</h1>
-    
+
     <h2 class="creature-of-the-week">
         Showing results for: <span>"{{ query }}"</span>
     </h2>
 
-    <div style="margin-left: 40px; margin-top: 30px;">
+    <div style="margin-left:40px; margin-top:30px;">
+
         {% if results %}
-            {% if results %}
-    {% for row in results %}
-        <div class="result-card" style="margin-bottom: 30px;">
 
-            <h3 style="color: #a2674b; font-size: 1.8rem; margin-bottom: 10px;">
-                {{ row[1] }}
-            </h3>
+            {% for row in results %}
 
-            <h4 style="color: #c9a55c; margin-bottom: 5px;">
-                Appearance
-            </h4>
+                <div class="result-card" style="margin-bottom:30px;">
 
-            <p class="creature-of-the-week-info" style="width: 70%; margin-left: 0;">
-                {{ row[2] }}
+                    <h3 style="color:#a2674b; font-size:1.8rem;">
+                        {{ row[1] }}
+                    </h3>
+
+                    <h4 style="color:#c9a55c;">
+                        Appearance
+                    </h4>
+
+                    <p class="creature-of-the-week-info" style="width:70%; margin-left:0;">
+                        {{ row[2] }}
+                    </p>
+
+                </div>
+
+                <hr style="border:0; border-top:1px dashed #c9a55c; width:70%; margin-left:0; margin-bottom:20px;">
+
+            {% endfor %}
+
+        {% else %}
+
+            <p class="creature-of-the-week-info">
+                No mythical creatures found matching your query.
             </p>
 
-        </div>
-
-        <hr style="border: 0; border-top: 1px dashed #c9a55c; width: 70%; margin-left: 0; margin-bottom: 20px;">
-    {% endfor %}
-{% else %}
-    <p class="creature-of-the-week-info">
-        No mythical creatures found matching your query.
-    </p>
-{% endif %}
-                </div>
-                <hr style="border: 0; border-top: 1px dashed #c9a55c; width: 70%; margin-left: 0; margin-bottom: 20px;">
-            {% endfor %}
-        {% else %}
-            <p class="creature-of-the-week-info">No mythical creatures found matching your query.</p>
         {% endif %}
 
-        <p style="margin-top: 40px;">
-            <a href="/" style="color: #a2674b; text-decoration: none; font-weight: bold;">← Back to Home</a>
+        <p style="margin-top:40px;">
+            <a href="/" style="color:#a2674b; text-decoration:none; font-weight:bold;">
+                ← Back to Home
+            </a>
         </p>
+
     </div>
+
 </body>
 </html>
