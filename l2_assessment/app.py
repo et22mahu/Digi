@@ -19,9 +19,17 @@ def search():
     cursor = conn.cursor()
 
     cursor.execute(
-        "SELECT * FROM `Mythical Creatures` WHERE `Mythical Creature Name` LIKE ?",
-        (f"%{query}%",),
-    )
+    """
+    SELECT
+        mc.*,
+        li.`Mythology source`
+    FROM `Mythical Creatures` AS mc
+    JOIN `Location Information` AS li
+        ON mc.`Country ID` = li.`Country ID`
+    WHERE mc.`Mythical Creature Name` LIKE ?
+    """,
+    (f"%{query}%",),
+)
 
     results = cursor.fetchall()
     conn.close()
