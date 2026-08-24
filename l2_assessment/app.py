@@ -52,3 +52,47 @@ def norse():
 @app.route("/egyptian")
 def egyptian():
     return render_template("egyptian.html")
+
+@app.route("/mayan")
+def mayan():
+    return render_template("mayan.html")
+
+@app.route("/japanese")
+def japanese():
+    return render_template("japanese.html")
+
+@app.route("/roman")
+def roman():
+    return render_template("roman.html")
+
+@app.route("/mesopotamian")
+def mesopotamian():
+    return render_template("mesopotamian.html")
+
+@app.route("/celtic")
+def celtic():
+    return render_template("celtic.html")
+
+@app.route("/hindu")
+def hindu():
+    return render_template("hindu.html")
+
+@app.route("/aztec")
+def aztec():
+    return render_template("aztec.html")
+
+@app.route("/chinese")
+def chinese():
+    return render_template("chinese.html")
+
+@app.route("/native_american")
+def native_american():
+    return render_template("native_american.html")
+
+@app.route("/maori")
+def maori():
+    return render_template("maori.html")
+
+@app.route("/hawaiian")
+def hawaiian():
+    return render_template("hawaiian.html")
