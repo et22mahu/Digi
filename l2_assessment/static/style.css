@@ -231,3 +231,64 @@ body {
     width: 100%;
     height: auto;
 }
+
+.creature-name {
+    font-size: 1.8rem;
+    color: #a2674b;
+}
+
+.ancient-greek-font {
+    font-family: "Cinzel Decorative", serif;
+}
+
+.ancient-egyptian-font {
+    font-family: "Marcellus", serif;
+}
+
+.norse-font {
+    font-family: "MedievalSharp", serif;
+}
+
+.japanese-font {
+    font-family: "Noto Serif JP", serif;
+}
+
+.roman-font {
+    font-family: "Cinzel", serif;
+}
+
+.mayan-font {
+    font-family: "Rye", serif;
+}
+
+.mesopotamian-font {
+    font-family: "Alegreya SC", serif;
+}
+
+.celtic-font {
+    font-family: "Uncial Antiqua", serif;
+}
+
+.hindu-font {
+    font-family: "Yatra One", serif;
+}
+
+.aztec-font {
+    font-family: "Metal Mania", serif;
+}
+
+.chinese-font {
+    font-family: "Noto Serif SC", serif;
+}
+
+.native-american-font {
+    font-family: "Eagle Lake", serif;
+}
+
+.maori-font {
+    font-family: "Permanent Marker", cursive;
+}
+
+.hawaiian-font {
+    font-family: "Pacifico", cursive;
+}

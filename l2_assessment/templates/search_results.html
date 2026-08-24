@@ -1,17 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
+{% extends "base.html" %}
 
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;600&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&display=swap" rel="stylesheet">
+{% block title %}Search Results{% endblock %}
 
-    <title>Search Results</title>
-
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
-
-<body>
+{% block content %}
 
     <h1 class="main-title">Search Results</h1>
 
@@ -27,7 +18,7 @@
 
                 <div class="result-card" style="margin-bottom:30px;">
 
-                    <h3 style="color:#a2674b; font-size:1.8rem;">
+                    <h3 class="creature-name {{ row[9]|lower|replace(' ', '-') }}-font">
                         {{ row[1] }}
                     </h3>
 
@@ -61,5 +52,4 @@
 
     </div>
 
-</body>
-</html>
+{% endblock %}
