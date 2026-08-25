@@ -1,8 +1,9 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, session, redirect, url_for
 import os
 import sqlite3
 
 app = Flask(__name__)
+app.secret_key = "mythology-bodleian-secret-key"
 
 BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 DB_PATH = os.path.join(BASE_DIR, "myth_database.db")
@@ -168,6 +169,16 @@ def maori():
 @app.route("/hawaiian")
 def hawaiian():
     return render_template("hawaiian.html")
+
+@app.route("/toggle_easy_read")
+def toggle_easy_read():
+
+    if session.get("easy_read", False):
+        session["easy_read"] = False
+    else:
+        session["easy_read"] = True
+
+    return redirect(request.referrer or url_for("home"))
 
 
 if __name__ == "__main__":

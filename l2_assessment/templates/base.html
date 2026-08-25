@@ -4,21 +4,17 @@
 <head>
     <meta charset="UTF-8">
 
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;600&family=Lora:wght@400;600&display=swap" rel="stylesheet">
 
     <link href="https://fonts.googleapis.com/css2?family=Alegreya+SC&family=Cinzel&family=Cinzel+Decorative:wght@400;600&family=Eagle+Lake&family=Marcellus&family=MedievalSharp&family=Metal+Mania&family=Noto+Serif+JP&family=Noto+Serif+SC&family=Pacifico&family=Permanent+Marker&family=Rye&family=Uncial+Antiqua&family=Yatra+One&display=swap" rel="stylesheet">
 
-    <title>
-        {% block title %}
-            The Mythology Bodleian
-        {% endblock %}
-    </title>
+    <title>{% block title %}The Mythology Bodleian{% endblock %}</title>
 
-    <link rel="stylesheet"
-          href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
-<body>
+<body class="{% if session.get('easy_read') %}easy-read{% endif %}">
 
     <nav class="navbar">
 
@@ -47,12 +43,23 @@
 
         </form>
 
+        <a
+            href="/toggle_easy_read"
+            class="easy-read-button"
+        ></a>
+        {% if session.get('easy_read') %}
+        Easy Read: On
+    {% else %}
+        Easy Read: Off
+    {% endif %}
+        </a>
+
     </nav>
 
 
     {% block content %}
     {% endblock %}
 
-
 </body>
+
 </html>

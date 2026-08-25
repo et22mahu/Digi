@@ -292,3 +292,168 @@ body {
 .hawaiian-font {
     font-family: "Pacifico", cursive;
 }
+
+/* EASY READ BUTTON */
+
+.easy-read-button {
+    padding: 8px 14px;
+    border: 2px solid #f6f1e8;
+    border-radius: 20px;
+    background-color: #c9a55c;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.easy-read-button:hover {
+    background-color: #8b5e3c;
+}
+
+
+/* EASY READ MODE */
+
+.easy-read {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+
+/* Change all text to a clear font */
+
+.easy-read,
+.easy-read h1,
+.easy-read h2,
+.easy-read h3,
+.easy-read h4,
+.easy-read p,
+.easy-read a,
+.easy-read button,
+.easy-read input,
+.easy-read textarea,
+.easy-read select,
+.easy-read .creature-name,
+.easy-read .ancient-greek-font,
+.easy-read .ancient-egyptian-font,
+.easy-read .norse-font,
+.easy-read .japanese-font,
+.easy-read .roman-font,
+.easy-read .mayan-font,
+.easy-read .mesopotamian-font,
+.easy-read .celtic-font,
+.easy-read .hindu-font,
+.easy-read .aztec-font,
+.easy-read .chinese-font,
+.easy-read .native-american-font,
+.easy-read .maori-font,
+.easy-read .hawaiian-font {
+    font-family: Arial, sans-serif !important;
+}
+
+
+/* Main title */
+
+.easy-read .main-title {
+    font-size: 4rem;
+    color: #000000;
+    text-shadow: none;
+}
+
+
+/* General text */
+
+.easy-read p {
+    font-size: 1.3rem;
+    line-height: 2;
+    color: #000000;
+}
+
+
+/* Headings */
+
+.easy-read h2,
+.easy-read h3,
+.easy-read h4 {
+    color: #000000;
+    text-shadow: none;
+}
+
+
+/* Creature of the week */
+
+.easy-read .creature-of-the-week {
+    color: #000000;
+    font-size: 2.5rem;
+}
+
+.easy-read .creature-of-the-week span {
+    color: #000000;
+    text-shadow: none;
+}
+
+
+/* Navigation bar */
+
+.easy-read .navbar {
+    background-color: #000000;
+}
+
+.easy-read .navbar-brand,
+.easy-read .navbar-links a {
+    color: #ffffff;
+}
+
+
+/* Search bar */
+
+.easy-read .search-input {
+    background-color: #ffffff;
+    color: #000000;
+    border: 2px solid #ffffff;
+}
+
+
+/* Buttons */
+
+.easy-read .search-button,
+.easy-read .easy-read-button,
+.easy-read .contact-form button {
+    background-color: #ffffff;
+    color: #000000;
+    border: 2px solid #ffffff;
+}
+
+
+/* Mythology cards */
+
+.easy-read .mythology-card {
+    border: 2px solid #000000;
+    box-shadow: none;
+}
+
+.easy-read .mythology-card:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+
+/* Increase spacing */
+
+.easy-read .creature-of-the-week-info {
+    font-size: 1.3rem;
+    line-height: 2;
+}
+
+
+/* Contact form */
+
+.easy-read .contact-form input,
+.easy-read .contact-form select,
+.easy-read .contact-form textarea {
+    border: 2px solid #000000;
+    background-color: #ffffff;
+    color: #000000;
+    font-size: 1.2rem;
+}
