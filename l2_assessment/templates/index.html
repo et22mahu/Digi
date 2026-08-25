@@ -1,64 +1,117 @@
 {% extends "base.html" %}
 
-{% block title %}The Mythology Bodleian{% endblock %}
+
+{% block title %}
+The Mythology Bodleian
+{% endblock %}
+
 
 {% block content %}
 
-    <h1 class="main-title">The Mythology Bodleian</h1>
+<h1 class="main-title">
+    The Mythology Bodleian
+</h1>
 
-    <div class="creature-container">
 
-        <div class="creature-text">
+<div class="creature-container">
 
-            <h2 class="creature-of-the-week">
-                Mythical Creature of the Week:
-                <span>Drakons</span>
-            </h2>
+    <div class="creature-text">
 
-            <p class="creature-of-the-week-info">
-                Drakons are creatures from Greek Mythology with enormous serpentine
-                bodies, often with crests, beards or multiple heads. They lacked
-                wings and typically moved by slithering. They primarily live in
-                deep caverns, sacred groves and remote springs. They are often
-                sleepless and possess a gaze that can paralyze victims.
-            </p>
+        <h2 class="creature-of-the-week">
 
-        </div>
+            Mythical Creature of the Week:
 
-        <div class="creature-image">
-            <img src="{{ url_for('static', filename='images/drakon.png') }}" alt="Drakon">
-        </div>
+            <span>
+                Drakons
+            </span>
+
+        </h2>
+
+
+        <p class="creature-of-the-week-info">
+
+            Drakons are creatures from Greek Mythology with enormous
+            serpentine bodies, often with crests, beards or multiple heads.
+            They lacked wings and typically moved by slithering. They
+            primarily live in deep caverns, sacred groves and remote springs.
+            They are often sleepless and possess a gaze that can paralyze
+            victims.
+
+        </p>
 
     </div>
 
-    <img
-        src="{{ url_for('static', filename='images/logo.png') }}"
-        alt="Drakon"
-    >
 
-    <section class="mythology-section">
+    <div class="creature-image">
 
-        <h2 class="mythology-heading">Browse by Mythology</h2>
+        <img
+            src="{{ url_for('static', filename='images/drakon.png') }}"
+            alt="Drakon"
+        >
 
-        <div class="mythology-grid">
+    </div>
 
-            <a href="/greek" class="mythology-card">
-                <img src="{{ url_for('static', filename='images/greek.jpg') }}" alt="Ancient Greek Mythology">
-                <div class="mythology-title">Ancient Greek</div>
-            </a>
+</div>
 
-            <a href="/norse" class="mythology-card">
-                <img src="{{ url_for('static', filename='images/norse.jpg') }}" alt="Norse Mythology">
-                <div class="mythology-title">Norse</div>
-            </a>
 
-            <a href="/egyptian" class="mythology-card">
-                <img src="{{ url_for('static', filename='images/egyptian.jpg') }}" alt="Ancient Egyptian Mythology">
-                <div class="mythology-title">Ancient Egyptian</div>
-            </a>
+<img
+    src="{{ url_for('static', filename='images/logo.png') }}"
+    alt="The Mythology Bodleian logo"
+>
 
-        </div>
 
-    </section>
+<section class="mythology-section">
+
+    <h2 class="mythology-heading">
+        Browse by Mythology
+    </h2>
+
+
+    <div class="mythology-grid">
+
+        <a href="/greek" class="mythology-card">
+
+            <img
+                src="{{ url_for('static', filename='images/greek.jpg') }}"
+                alt="Ancient Greek Mythology"
+            >
+
+            <div class="mythology-title">
+                Ancient Greek
+            </div>
+
+        </a>
+
+
+        <a href="/norse" class="mythology-card">
+
+            <img
+                src="{{ url_for('static', filename='images/norse.jpg') }}"
+                alt="Norse Mythology"
+            >
+
+            <div class="mythology-title">
+                Norse
+            </div>
+
+        </a>
+
+
+        <a href="/egyptian" class="mythology-card">
+
+            <img
+                src="{{ url_for('static', filename='images/egyptian.jpg') }}"
+                alt="Ancient Egyptian Mythology"
+            >
+
+            <div class="mythology-title">
+                Ancient Egyptian
+            </div>
+
+        </a>
+
+    </div>
+
+</section>
 
 {% endblock %}

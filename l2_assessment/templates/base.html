@@ -1,23 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;600&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;600&family=Lora:wght@400;600&display=swap" rel="stylesheet">
 
-    <title>{% block title %}The Mythology Bodleian{% endblock %}</title>
-
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Alegreya+SC&family=Cinzel&family=Cinzel+Decorative:wght@400;600&family=Eagle+Lake&family=Marcellus&family=MedievalSharp&family=Metal+Mania&family=Noto+Serif+JP&family=Noto+Serif+SC&family=Pacifico&family=Permanent+Marker&family=Rye&family=Uncial+Antiqua&family=Yatra+One&display=swap" rel="stylesheet">
+
+    <title>
+        {% block title %}
+            The Mythology Bodleian
+        {% endblock %}
+    </title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
 </head>
 
 <body>
 
-    <!-- Navigation Bar -->
     <nav class="navbar">
-        <a href="/" class="navbar-brand">🏛️ The Mythology Bodleian</a>
+
+        <a href="/" class="navbar-brand">
+            🏛️ The Mythology Bodleian
+        </a>
 
         <ul class="navbar-links">
             <li><a href="/">Home</a></li>
@@ -26,21 +33,26 @@
         </ul>
 
         <form action="/search" method="GET" class="search-form">
+
             <input
                 type="text"
                 name="query"
                 placeholder="Search creatures..."
                 class="search-input"
             >
+
             <button type="submit" class="search-button">
                 Search
             </button>
+
         </form>
+
     </nav>
 
-    <!-- Page-specific content goes here -->
+
     {% block content %}
     {% endblock %}
+
 
 </body>
 </html>

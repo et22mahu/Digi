@@ -4,52 +4,65 @@
 
 {% block content %}
 
-    <h1 class="main-title">Search Results</h1>
+<h1 class="main-title">Search Results</h1>
 
-    <h2 class="creature-of-the-week">
-        Showing results for: <span>"{{ query }}"</span>
-    </h2>
+<h2 class="creature-of-the-week">
+    Showing results for:
+    <span>"{{ query }}"</span>
+</h2>
 
-    <div style="margin-left:40px; margin-top:30px;">
+<div style="margin-left:40px; margin-top:30px;">
 
-        {% if results %}
+    {% if results %}
 
-            {% for row in results %}
+        {% for row in results %}
 
-                <div class="result-card" style="margin-bottom:30px;">
+            <div class="result-card" style="margin-bottom:30px;">
 
-                    <h3 class="creature-name {{ row[9]|lower|replace(' ', '-') }}-font">
-                        {{ row[1] }}
-                    </h3>
+                <h3 class="creature-name {{ row['font_class'] }}">
+                    {{ row['name'] }}
+                </h3>
 
-                    <h4 style="color:#c9a55c;">
-                        Appearance
-                    </h4>
+                <h4 style="color:#c9a55c;">
+                    Appearance
+                </h4>
 
-                    <p class="creature-of-the-week-info" style="width:70%; margin-left:0;">
-                        {{ row[2] }}
-                    </p>
+                <p class="creature-of-the-week-info"
+                   style="width:70%; margin-left:0;">
+                    {{ row['appearance'] }}
+                </p>
 
-                </div>
+            </div>
 
-                <hr style="border:0; border-top:1px dashed #c9a55c; width:70%; margin-left:0; margin-bottom:20px;">
+            <hr style="
+                border:0;
+                border-top:1px dashed #c9a55c;
+                width:70%;
+                margin-left:0;
+                margin-bottom:20px;
+            ">
 
-            {% endfor %}
+        {% endfor %}
 
-        {% else %}
+    {% else %}
 
-            <p class="creature-of-the-week-info">
-                No mythical creatures found matching your query.
-            </p>
-
-        {% endif %}
-
-        <p style="margin-top:40px;">
-            <a href="/" style="color:#a2674b; text-decoration:none; font-weight:bold;">
-                ← Back to Home
-            </a>
+        <p class="creature-of-the-week-info">
+            No mythical creatures found matching your query.
         </p>
 
-    </div>
+    {% endif %}
+
+    <p style="margin-top:40px;">
+        <a href="/"
+           style="
+               color:#a2674b;
+               text-decoration:none;
+               font-weight:bold;
+           ">
+            ← Back to Home
+        </a>
+    </p>
+
+</div>
 
 {% endblock %}
