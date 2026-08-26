@@ -56,8 +56,27 @@ body {
 }
 
 .creature-of-the-week span {
-    color: #c9a55c;
-    text-shadow: 0 0 10px #c9a55c, 0 0 20px #c9a55c;
+    background: linear-gradient(
+        90deg,
+        red,
+        orange,
+        gold,
+        green,
+        blue,
+        indigo,
+        violet,
+        red
+    );
+
+    background-size: 300%;
+
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+
+    animation: rainbow 8s linear infinite;
 }
 
 .creature-of-the-week-info {
