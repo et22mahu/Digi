@@ -11,36 +11,44 @@
     <span>"{{ query }}"</span>
 </h2>
 
-<div style="margin-left:40px; margin-top:30px;">
+<div class="search-results-container">
 
     {% if results %}
 
         {% for row in results %}
 
-            <div class="result-card" style="margin-bottom:30px;">
+            <div class="result-card">
 
-                <h3 class="creature-name {{ row['font_class'] }}">
-                    {{ row['name'] }}
-                </h3>
+                <div class="result-information">
 
-                <h4 style="color:#c9a55c;">
-                    Appearance
-                </h4>
+                    <h3 class="creature-name {{ row['font_class'] }}">
+                        {{ row['name'] }}
+                    </h3>
 
-                <p class="creature-of-the-week-info"
-                   style="width:70%; margin-left:0;">
-                    {{ row['appearance'] }}
-                </p>
+                    <h4>
+                        Appearance
+                    </h4>
+
+                    <p class="result-appearance">
+                        {{ row['appearance'] }}
+                    </p>
+
+                </div>
+
+                {% if row['image'] %}
+                <div class="result-image">
+
+                    <img
+                        src="{{ url_for('static', filename='images/' + row['image']) }}"
+                        alt="{{ row['name'] }}"
+                    >
+
+                </div>
+                {% endif %}
 
             </div>
 
-            <hr style="
-                border:0;
-                border-top:1px dashed #c9a55c;
-                width:70%;
-                margin-left:0;
-                margin-bottom:20px;
-            ">
+            <hr class="result-divider">
 
         {% endfor %}
 
@@ -52,13 +60,8 @@
 
     {% endif %}
 
-    <p style="margin-top:40px;">
-        <a href="/"
-           style="
-               color:#a2674b;
-               text-decoration:none;
-               font-weight:bold;
-           ">
+    <p class="back-home">
+        <a href="/">
             ← Back to Home
         </a>
     </p>
