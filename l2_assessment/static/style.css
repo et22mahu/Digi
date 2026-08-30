@@ -581,3 +581,65 @@ body {
 .back-home a:hover {
     color: #c9a55c;
 }
+
+.mythology-creatures-container {
+    width: 90%;
+    margin: 40px auto;
+}
+
+.mythology-creature-card {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 40px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.mythology-creature-name {
+    font-size: 2.5rem;
+    color: #a2674b;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+.mythology-creature-image {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.mythology-creature-image img {
+    width: 100%;
+    max-width: 400px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.mythology-creature-card h3 {
+    color: #c9a55c;
+    font-family: "Cinzel Decorative", serif;
+    margin-top: 25px;
+}
+
+.mythology-creature-card p {
+    font-family: "Lora", serif;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #2B2B2B;
+}
+
+.back-home {
+    width: 90%;
+    margin: 40px auto;
+}
+
+.back-home a {
+    color: #a2674b;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.back-home a:hover {
+    color: #c9a55c;
+}
