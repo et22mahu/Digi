@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, session, redirect, url_for
 import os
 import sqlite3
+from datetime import datetime
 
 app = Flask(__name__)
 
@@ -30,7 +31,62 @@ FONT_CLASSES = {
 
 @app.route("/")
 def home():
-    return render_template("index.html")
+
+    conn = sqlite3.connect(DB_PATH)
+    cursor = conn.cursor()
+
+    cursor.execute(
+        """
+        SELECT
+            mc.`Mythical Creature Name`,
+            mc.`Appearance`,
+            mc.`Images`,
+            li.`Mythology source`
+        FROM `Mythical Creatures` AS mc
+        JOIN `Location Information` AS li
+            ON mc.`Country ID` = li.`Country ID`
+        ORDER BY mc.`Myth ID`
+        """
+    )
+
+    creatures = cursor.fetchall()
+
+    conn.close()
+
+    if creatures:
+
+        week_number = datetime.now().isocalendar().week
+
+        creature = creatures[
+            (week_number - 1) % len(creatures)
+        ]
+
+        name = creature[0]
+        appearance = creature[1]
+        image = creature[2]
+        mythology = creature[3]
+
+        font_class = FONT_CLASSES.get(
+            mythology,
+            "creature-name"
+        )
+
+        creature_of_the_week = {
+            "name": name,
+            "appearance": appearance,
+            "image": image,
+            "mythology": mythology,
+            "font_class": font_class
+        }
+
+    else:
+
+        creature_of_the_week = None
+
+    return render_template(
+        "index.html",
+        creature=creature_of_the_week
+    )
 
 
 @app.route("/toggle_easy_read")
