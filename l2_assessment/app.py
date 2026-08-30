@@ -204,74 +204,88 @@ def submit_contact():
     return redirect(url_for("contact"))
 
 
-@app.route("/greek")
-def greek():
-    return render_template("greek.html")
+MYTHOLOGY_ROUTES = {
+    "greek": "Ancient Greek",
+    "norse": "Norse",
+    "egyptian": "Ancient Egyptian",
+    "japanese": "Japanese",
+    "roman": "Roman",
+    "mayan": "Mayan",
+    "mesopotamian": "Mesopotamian",
+    "celtic": "Celtic",
+    "hindu": "Hindu",
+    "aztec": "Aztec",
+    "chinese": "Chinese",
+    "native_american": "Native American",
+    "maori": "Maori",
+    "hawaiian": "Hawaiian"
+}
 
 
-@app.route("/norse")
-def norse():
-    return render_template("norse.html")
+@app.route("/mythology/<mythology>")
+def mythology_page(mythology):
 
+    mythology_name = MYTHOLOGY_ROUTES.get(mythology)
 
-@app.route("/egyptian")
-def egyptian():
-    return render_template("egyptian.html")
+    if mythology_name is None:
+        return "Mythology not found", 404
 
+    conn = sqlite3.connect(DB_PATH)
+    cursor = conn.cursor()
 
-@app.route("/mayan")
-def mayan():
-    return render_template("mayan.html")
+    cursor.execute(
+        """
+        SELECT
+            mc.`Myth ID`,
+            mc.`Mythical Creature Name`,
+            mc.`Appearance`,
+            mc.`Behaviour`,
+            mc.`Danger Rating`,
+            mc.`Intelligence`,
+            mc.`Habitat`,
+            mc.`Country ID`,
+            mc.`Images`,
+            li.`Mythology source`
+        FROM `Mythical Creatures` AS mc
+        JOIN `Location Information` AS li
+            ON mc.`Country ID` = li.`Country ID`
+        WHERE li.`Mythology source` = ?
+        ORDER BY mc.`Mythical Creature Name`
+        """,
+        (mythology_name,)
+    )
 
+    results = cursor.fetchall()
 
-@app.route("/japanese")
-def japanese():
-    return render_template("japanese.html")
+    conn.close()
 
+    formatted_results = []
 
-@app.route("/roman")
-def roman():
-    return render_template("roman.html")
+    for row in results:
 
+        font_class = FONT_CLASSES.get(
+            mythology_name,
+            "creature-name"
+        )
 
-@app.route("/mesopotamian")
-def mesopotamian():
-    return render_template("mesopotamian.html")
+        formatted_results.append({
+            "name": row[1],
+            "appearance": row[2],
+            "behaviour": row[3],
+            "danger": row[4],
+            "intelligence": row[5],
+            "habitat": row[6],
+            "country_id": row[7],
+            "image": row[8],
+            "mythology": row[9],
+            "font_class": font_class
+        })
 
-
-@app.route("/celtic")
-def celtic():
-    return render_template("celtic.html")
-
-
-@app.route("/hindu")
-def hindu():
-    return render_template("hindu.html")
-
-
-@app.route("/aztec")
-def aztec():
-    return render_template("aztec.html")
-
-
-@app.route("/chinese")
-def chinese():
-    return render_template("chinese.html")
-
-
-@app.route("/native_american")
-def native_american():
-    return render_template("native_american.html")
-
-
-@app.route("/maori")
-def maori():
-    return render_template("maori.html")
-
-
-@app.route("/hawaiian")
-def hawaiian():
-    return render_template("hawaiian.html")
+    return render_template(
+        "mythology.html",
+        mythology=mythology_name,
+        creatures=formatted_results
+    )
 
 
 if __name__ == "__main__":
