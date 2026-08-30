@@ -287,6 +287,74 @@ def mythology_page(mythology):
         creatures=formatted_results
     )
 
+@app.route("/greek")
+def greek():
+    return redirect(url_for("mythology_page", mythology="greek"))
+
+
+@app.route("/norse")
+def norse():
+    return redirect(url_for("mythology_page", mythology="norse"))
+
+
+@app.route("/egyptian")
+def egyptian():
+    return redirect(url_for("mythology_page", mythology="egyptian"))
+
+
+@app.route("/japanese")
+def japanese():
+    return redirect(url_for("mythology_page", mythology="japanese"))
+
+
+@app.route("/roman")
+def roman():
+    return redirect(url_for("mythology_page", mythology="roman"))
+
+
+@app.route("/mayan")
+def mayan():
+    return redirect(url_for("mythology_page", mythology="mayan"))
+
+
+@app.route("/mesopotamian")
+def mesopotamian():
+    return redirect(url_for("mythology_page", mythology="mesopotamian"))
+
+
+@app.route("/celtic")
+def celtic():
+    return redirect(url_for("mythology_page", mythology="celtic"))
+
+
+@app.route("/hindu")
+def hindu():
+    return redirect(url_for("mythology_page", mythology="hindu"))
+
+
+@app.route("/aztec")
+def aztec():
+    return redirect(url_for("mythology_page", mythology="aztec"))
+
+
+@app.route("/chinese")
+def chinese():
+    return redirect(url_for("mythology_page", mythology="chinese"))
+
+
+@app.route("/native_american")
+def native_american():
+    return redirect(url_for("mythology_page", mythology="native_american"))
+
+
+@app.route("/maori")
+def maori():
+    return redirect(url_for("mythology_page", mythology="maori"))
+
+
+@app.route("/hawaiian")
+def hawaiian():
+    return redirect(url_for("mythology_page", mythology="hawaiian"))
 
 if __name__ == "__main__":
     app.run(debug=True)
