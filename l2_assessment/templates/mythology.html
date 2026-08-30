@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% block title %}{{ mythology }} Mythology{% endblock %}
+
+{% block content %}
+
+<h1 class="main-title">{{ mythology }} Mythology</h1>
+
+<div class="mythology-creatures-container">
+
+    {% if creatures %}
+
+        {% for creature in creatures %}
+
+            <div class="mythology-creature-card">
+
+                <h2 class="mythology-creature-name {{ creature['font_class'] }}">
+                    {{ creature['name'] }}
+                </h2>
+
+                {% if creature['image'] %}
+
+                    <div class="mythology-creature-image">
+
+                        <img
+                            src="{{ url_for('static', filename='images/' + creature['image']) }}"
+                            alt="{{ creature['name'] }}"
+                        >
+
+                    </div>
+
+                {% endif %}
+
+                <h3>Appearance</h3>
+
+                <p>
+                    {{ creature['appearance'] }}
+                </p>
+
+                <h3>Behaviour</h3>
+
+                <p>
+                    {{ creature['behaviour'] }}
+                </p>
+
+                <h3>Danger Rating</h3>
+
+                <p>
+                    {{ creature['danger'] }}/10
+                </p>
+
+                <h3>Intelligence Rating</h3>
+
+                <p>
+                    {{ creature['intelligence'] }}/10
+                </p>
+
+                <h3>Habitat</h3>
+
+                <p>
+                    {{ creature['habitat'] }}
+                </p>
+
+            </div>
+
+        {% endfor %}
+
+    {% else %}
+
+        <p class="creature-of-the-week-info">
+            No creatures were found for this mythology.
+        </p>
+
+    {% endif %}
+
+</div>
+
+<p class="back-home">
+    <a href="/">
+        ← Back to Home
+    </a>
+</p>
+
+{% endblock %}
