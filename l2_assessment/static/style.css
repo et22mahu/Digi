@@ -582,10 +582,13 @@ body {
     color: #c9a55c;
 }
 
+/* MYTHOLOGY AND SEARCH RESULT CREATURE CARDS */
+
 .mythology-creatures-container {
     width: 90%;
     margin: 40px auto;
 }
+
 
 .mythology-creature-card {
     background: white;
@@ -593,7 +596,18 @@ body {
     padding: 30px;
     margin-bottom: 40px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
 }
+
+
+.mythology-creature-information {
+    flex: 1;
+}
+
 
 .mythology-creature-name {
     font-size: 2.5rem;
@@ -602,15 +616,17 @@ body {
     margin-bottom: 25px;
 }
 
+
 .mythology-creature-image {
-    text-align: center;
-    margin-bottom: 25px;
+    flex: 0 0 400px;
+    text-align: right;
 }
+
 
 .mythology-creature-image img {
     width: 100%;
     max-width: 400px;
-    height: 250px;
+    height: 300px;
     object-fit: cover;
     border-radius: 12px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);

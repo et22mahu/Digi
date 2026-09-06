@@ -14,10 +14,12 @@
 
 {% if query %}
 
+```
 <h2 class="creature-of-the-week">
     Showing results for:
     <span>"{{ query }}"</span>
 </h2>
+```
 
 {% endif %}
 
@@ -30,9 +32,55 @@
 
         <div class="mythology-creature-card">
 
-            <h2 class="mythology-creature-name {{ creature.font_class }}">
-                {{ creature.name }}
-            </h2>
+            <div class="mythology-creature-information">
+
+                <h2 class="mythology-creature-name {{ creature.font_class }}">
+                    {{ creature.name }}
+                </h2>
+
+
+                <h3>Mythology</h3>
+
+                <p>
+                    {{ creature.mythology }}
+                </p>
+
+
+                <h3>Appearance</h3>
+
+                <p>
+                    {{ creature.appearance }}
+                </p>
+
+
+                <h3>Behaviour</h3>
+
+                <p>
+                    {{ creature.behaviour }}
+                </p>
+
+
+                <h3>Danger Rating</h3>
+
+                <p>
+                    {{ creature.danger }}/10
+                </p>
+
+
+                <h3>Intelligence Rating</h3>
+
+                <p>
+                    {{ creature.intelligence }}/10
+                </p>
+
+
+                <h3>Habitat</h3>
+
+                <p>
+                    {{ creature.habitat }}
+                </p>
+
+            </div>
 
 
             {% if creature.image %}
@@ -47,48 +95,6 @@
                 </div>
 
             {% endif %}
-
-
-            <h3>Mythology</h3>
-
-            <p>
-                {{ creature.mythology }}
-            </p>
-
-
-            <h3>Appearance</h3>
-
-            <p>
-                {{ creature.appearance }}
-            </p>
-
-
-            <h3>Behaviour</h3>
-
-            <p>
-                {{ creature.behaviour }}
-            </p>
-
-
-            <h3>Danger Rating</h3>
-
-            <p>
-                {{ creature.danger }}/10
-            </p>
-
-
-            <h3>Intelligence Rating</h3>
-
-            <p>
-                {{ creature.intelligence }}/10
-            </p>
-
-
-            <h3>Habitat</h3>
-
-            <p>
-                {{ creature.habitat }}
-            </p>
 
         </div>
 
