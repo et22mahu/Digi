@@ -102,7 +102,7 @@ def toggle_easy_read():
 
 @app.route("/search")
 def search():
-    query = request.args.get("query", "")
+    query = request.args.get("query", "").strip()
 
     conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
@@ -123,9 +123,15 @@ def search():
         FROM `Mythical Creatures` AS mc
         JOIN `Location Information` AS li
             ON mc.`Country ID` = li.`Country ID`
-        WHERE mc.`Mythical Creature Name` LIKE ?
+        WHERE
+            mc.`Mythical Creature Name` LIKE ?
+            OR li.`Mythology source` LIKE ?
+        ORDER BY mc.`Mythical Creature Name`
         """,
-        (f"%{query}%",),
+        (
+            f"%{query}%",
+            f"%{query}%"
+        ),
     )
 
     results = cursor.fetchall()
@@ -151,7 +157,7 @@ def search():
             "habitat": row[6],
             "country_id": row[7],
             "image": row[8],
-            "mythology": row[9],
+            "mythology": mythology,
             "font_class": font_class
         })
 

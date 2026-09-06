@@ -7,48 +7,50 @@
 <h1 class="main-title">Search Results</h1>
 
 <h2 class="creature-of-the-week">
-    Showing results for:
-    <span>"{{ query }}"</span>
+    Showing results for: <span>"{{ query }}"</span>
 </h2>
 
 <div class="search-results-container">
 
     {% if results %}
 
-        {% for row in results %}
+        {% for creature in results %}
 
-            <div class="result-card">
+        <div class="result-card">
 
-                <div class="result-information">
+            <h3 class="creature-name {{ creature.font_class }}">
+                {{ creature.name }}
+            </h3>
 
-                    <h3 class="creature-name {{ row['font_class'] }}">
-                        {{ row['name'] }}
-                    </h3>
+            {% if creature.image %}
+                <img
+                    src="{{ url_for('static', filename='images/' + creature.image) }}"
+                    alt="{{ creature.name }}"
+                    class="search-result-image"
+                >
+            {% endif %}
 
-                    <h4>
-                        Appearance
-                    </h4>
+            <h4>Mythology</h4>
+            <p>{{ creature.mythology }}</p>
 
-                    <p class="result-appearance">
-                        {{ row['appearance'] }}
-                    </p>
+            <h4>Appearance</h4>
+            <p>{{ creature.appearance }}</p>
 
-                </div>
+            <h4>Behaviour</h4>
+            <p>{{ creature.behaviour }}</p>
 
-                {% if row['image'] %}
-                <div class="result-image">
+            <h4>Danger Rating</h4>
+            <p>{{ creature.danger }}/10</p>
 
-                    <img
-                        src="{{ url_for('static', filename='images/' + row['image']) }}"
-                        alt="{{ row['name'] }}"
-                    >
+            <h4>Intelligence Rating</h4>
+            <p>{{ creature.intelligence }}/10</p>
 
-                </div>
-                {% endif %}
+            <h4>Habitat</h4>
+            <p>{{ creature.habitat }}</p>
 
-            </div>
+        </div>
 
-            <hr class="result-divider">
+        <hr>
 
         {% endfor %}
 
@@ -59,12 +61,6 @@
         </p>
 
     {% endif %}
-
-    <p class="back-home">
-        <a href="/">
-            ← Back to Home
-        </a>
-    </p>
 
 </div>
 
