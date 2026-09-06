@@ -4,64 +4,112 @@
 
 {% block content %}
 
-<h1 class="main-title">Search Results</h1>
+<h1 class="main-title">
+    {% if query %}
+        Search Results
+    {% else %}
+        Browse All Mythical Creatures
+    {% endif %}
+</h1>
+
+{% if query %}
 
 <h2 class="creature-of-the-week">
-    Showing results for: <span>"{{ query }}"</span>
+    Showing results for:
+    <span>"{{ query }}"</span>
 </h2>
 
-<div class="search-results-container">
+{% endif %}
 
-    {% if results %}
+<div class="mythology-creatures-container">
 
-        {% for creature in results %}
+```
+{% if results %}
 
-        <div class="result-card">
+    {% for creature in results %}
 
-            <h3 class="creature-name {{ creature.font_class }}">
+        <div class="mythology-creature-card">
+
+            <h2 class="mythology-creature-name {{ creature.font_class }}">
                 {{ creature.name }}
-            </h3>
+            </h2>
+
 
             {% if creature.image %}
-                <img
-                    src="{{ url_for('static', filename='images/' + creature.image) }}"
-                    alt="{{ creature.name }}"
-                    class="search-result-image"
-                >
+
+                <div class="mythology-creature-image">
+
+                    <img
+                        src="{{ url_for('static', filename='images/' + creature.image) }}"
+                        alt="{{ creature.name }}"
+                    >
+
+                </div>
+
             {% endif %}
 
-            <h4>Mythology</h4>
-            <p>{{ creature.mythology }}</p>
 
-            <h4>Appearance</h4>
-            <p>{{ creature.appearance }}</p>
+            <h3>Mythology</h3>
 
-            <h4>Behaviour</h4>
-            <p>{{ creature.behaviour }}</p>
+            <p>
+                {{ creature.mythology }}
+            </p>
 
-            <h4>Danger Rating</h4>
-            <p>{{ creature.danger }}/10</p>
 
-            <h4>Intelligence Rating</h4>
-            <p>{{ creature.intelligence }}/10</p>
+            <h3>Appearance</h3>
 
-            <h4>Habitat</h4>
-            <p>{{ creature.habitat }}</p>
+            <p>
+                {{ creature.appearance }}
+            </p>
+
+
+            <h3>Behaviour</h3>
+
+            <p>
+                {{ creature.behaviour }}
+            </p>
+
+
+            <h3>Danger Rating</h3>
+
+            <p>
+                {{ creature.danger }}/10
+            </p>
+
+
+            <h3>Intelligence Rating</h3>
+
+            <p>
+                {{ creature.intelligence }}/10
+            </p>
+
+
+            <h3>Habitat</h3>
+
+            <p>
+                {{ creature.habitat }}
+            </p>
 
         </div>
 
-        <hr>
+    {% endfor %}
 
-        {% endfor %}
 
-    {% else %}
+{% else %}
 
-        <p class="creature-of-the-week-info">
-            No mythical creatures found matching your query.
-        </p>
+    <p class="creature-of-the-week-info">
+        No mythical creatures found matching your query.
+    </p>
 
-    {% endif %}
+{% endif %}
+```
 
 </div>
+
+<p class="back-home">
+    <a href="/">
+        ← Back to Home
+    </a>
+</p>
 
 {% endblock %}
