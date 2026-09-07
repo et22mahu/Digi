@@ -659,3 +659,26 @@ body {
 .back-home a:hover {
     color: #c9a55c;
 }
+
+.error-page {
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.error-page h1 {
+    font-size: 3rem;
+    margin-bottom: 25px;
+}
+
+.error-page p {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.home-button {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 8px;
+}
