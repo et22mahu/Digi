@@ -109,7 +109,7 @@ def search():
     query = query.translate(
         str.maketrans("", "", string.punctuation)
     )
-    
+
     conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
 
@@ -367,6 +367,10 @@ def maori():
 @app.route("/hawaiian")
 def hawaiian():
     return redirect(url_for("mythology_page", mythology="hawaiian"))
+
+@app.errorhandler(404)
+def page_not_found(error):
+    return render_template("404.html"), 404
 
 if __name__ == "__main__":
     app.run(debug=True)
