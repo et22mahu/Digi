@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, session, redirect, url_for
 import os
 import sqlite3
+import string
 from datetime import datetime
 
 app = Flask(__name__)
@@ -102,8 +103,13 @@ def toggle_easy_read():
 
 @app.route("/search")
 def search():
+
     query = request.args.get("query", "").strip()
 
+    query = query.translate(
+        str.maketrans("", "", string.punctuation)
+    )
+    
     conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
 
